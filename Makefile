@@ -1,6 +1,6 @@
 # Makefile for ytwatch
 
-SWIFTc = swiftc
+SWIFTc = xcrun swiftc
 TARGET = ytwatch
 SRC = ytwatch.swift
 
