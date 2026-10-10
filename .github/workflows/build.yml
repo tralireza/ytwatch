@@ -25,4 +25,4 @@ jobs:
     - name: Verify Binary
       run: |
         file ytwatch
-        ./ytwatch --help || true
+        ./ytwatch --version

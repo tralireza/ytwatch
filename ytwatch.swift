@@ -1,6 +1,17 @@
 import Foundation
 import AppKit
 
+let arguments = CommandLine.arguments
+if arguments.contains("--version") {
+    print("ytwatch 1.0.0")
+    exit(0)
+}
+if arguments.contains("--help") {
+    print("Usage: ytwatch [--version] [--help]")
+    print("Monitors clipboard for YouTube links and triggers playback via v().")
+    exit(0)
+}
+
 let ytp = #/^(https://www\.youtube\.com/watch\?v=|https://youtu\.be/)/#
 
 func executeAction(with url: String) {
