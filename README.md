@@ -1,5 +1,7 @@
 # ytwatch
 
+[![Build](https://github.com/tralireza/ytwatch/actions/workflows/build.yml/badge.svg)](https://github.com/tralireza/ytwatch/actions/workflows/build.yml)
+
 A lightweight macOS clipboard monitor written in Swift that automatically detects YouTube links copied to your clipboard and triggers playback or downloading via a custom shell function.
 
 ## Features

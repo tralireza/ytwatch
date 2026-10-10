@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Swift
+      uses: swift-actions/setup-swift@v2
+      with:
+        swift-version: "5.9"
+
+    - name: Build with Make
+      run: make
+
+    - name: Verify Binary
+      run: |
+        file ytwatch
+        ./ytwatch --help || true
