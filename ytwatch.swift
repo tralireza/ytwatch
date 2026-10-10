@@ -1,15 +1,21 @@
 import Foundation
 import AppKit
 
-let arguments = CommandLine.arguments
-if arguments.contains("--version") {
-    print("ytwatch 1.0.0")
-    exit(0)
-}
-if arguments.contains("--help") {
-    print("Usage: ytwatch [--version] [--help]")
-    print("Monitors clipboard for YouTube links and triggers playback via v().")
-    exit(0)
+for arg in CommandLine.arguments.dropFirst() {
+    switch arg {
+    case "--version", "-v":
+        print("ytwatch 1.0.0")
+        exit(0)
+
+    case "--help", "-h":
+        print("Usage: ytwatch [--version] [--help]")
+        print("Monitors clipboard for YouTube links and triggers playback via v().")
+        exit(0)
+
+    default:
+        print("Unknown argument: \(arg)")
+        exit(1)
+    }
 }
 
 let ytp = #/^(https://www\.youtube\.com/watch\?v=|https://youtu\.be/)/#
